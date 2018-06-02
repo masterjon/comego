@@ -93,15 +93,20 @@ class ProgramaVC: UIViewController, UICollectionViewDataSource, UICollectionView
             
         }
         else if let vc = segue.destination as? WebViewController{
-            vc.webUrl = "https://online.flippingbook.com/view/759084/28/"
+            vc.webUrl = self.items[5].link
         }
         
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if let indexPath = self.collectionView.indexPath(for: sender as! UICollectionViewCell){
-            if self.items[indexPath.row].link.isEmpty{
-                return true
+        if identifier == "programSegue"{
+            if let indexPath = self.collectionView.indexPath(for: sender as! UICollectionViewCell){
+                if self.items[indexPath.row].link.isEmpty{
+                    return true
+                }
             }
+        }
+        else if identifier == "menuSegue"{
+            return true
         }
         
         
@@ -122,11 +127,7 @@ class ProgramaVC: UIViewController, UICollectionViewDataSource, UICollectionView
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        let tracker = GAI.sharedInstance().defaultTracker
-        tracker?.set(kGAIScreenName, value: "Programa")
-        tracker?.send(GAIDictionaryBuilder.createScreenView().build() as! [AnyHashable: Any])
-    }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {

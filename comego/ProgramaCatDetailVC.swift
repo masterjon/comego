@@ -60,6 +60,7 @@ class ProgramaCatDetailVC: UIViewController, UITableViewDataSource,UITableViewDe
                         actividad.dateEnd = item["end_date"].string ?? ""
                         actividad.academicProgramUrl = item["academic_program_url"].string ?? ""
                         actividad.inscriptionUrl = item["inscription_url"].string ?? ""
+                        actividad.category = item["category"].string ?? ""
                         subCategory.activities.append(actividad)
                     }
                     self.subCategories.append(subCategory)
@@ -121,7 +122,7 @@ class ProgramaCatDetailVC: UIViewController, UITableViewDataSource,UITableViewDe
         if let indexPath = tableView.indexPathForSelectedRow{
             let items = subCategories[indexPath.section].activities
                 vc.programItem = items[indexPath.row]
-                vc.programCat = cat.title
+               
             
         }
     }

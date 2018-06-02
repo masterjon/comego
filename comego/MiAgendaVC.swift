@@ -43,6 +43,14 @@ class MiAgendaVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("center")
+        center.getPendingNotificationRequests(completionHandler: { (request) in
+            for r in request{
+                print(r.identifier)
+                print("\n")
+            }
+        })
+        print("endcenter")
         loadItems()
         loadStoredItems()
         
@@ -108,6 +116,9 @@ class MiAgendaVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
             
             let row = mylist[indexPath.section][indexPath.row]
             if var storedCats = userDefaults.object(forKey: "my_schedule_comego") as? [Int]{
+                let notifIdentifier = "\(row.id)\(row.title)"
+                print("Delete Notif:"+notifIdentifier)
+                center.removePendingNotificationRequests(withIdentifiers: [notifIdentifier])
                 var deleteIndex: Int?
                 for (idx,item) in storedCats.enumerated(){
                     if item == row.id{
@@ -201,7 +212,6 @@ class MiAgendaVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
                     self.list.append(actividad)
                 }
                 if let schedule_items = self.userDefaults.object(forKey: "my_schedule_comego") as? [Int]{
-                    print(schedule_items)
                     for i in schedule_items{
                         if let index = self.list.index(where: {$0.id == i}){
                             guard let idx = Int(dateFormatCustom2( self.list[index].dateStart)) else{return}
@@ -212,7 +222,6 @@ class MiAgendaVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
                 }
                 self.tableView.reloadData()
                 self.loadingIndicator.stopAnimating()
-                print(self.list)
             case .failure(let error):
                 print(error)
             }

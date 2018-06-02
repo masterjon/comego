@@ -19,7 +19,7 @@ class StaticTabViewController: UIViewController,UIWebViewDelegate{
     
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     
-    let localSource = [ImageSource(imageString: "F1CUNP10")!, ImageSource(imageString: "F2CUNP10")!, ImageSource(imageString: "F3CUNP10")!, ImageSource(imageString: "F4CUNP10")!,ImageSource(imageString: "F5CUNP10")!,ImageSource(imageString: "F6CUNP10")!,ImageSource(imageString: "F7CUNP10")!,ImageSource(imageString: "F8CUNP10")!]
+
     class func create(storyboardId:String) -> StaticTabViewController {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         return mainStoryboard.instantiateViewController(withIdentifier: storyboardId) as! StaticTabViewController
@@ -41,25 +41,7 @@ class StaticTabViewController: UIViewController,UIWebViewDelegate{
             
         }
         
-        if slideshow != nil{
-            slideshow.slideshowInterval = 5.0
-            slideshow.pageControlPosition = PageControlPosition.underScrollView
-            slideshow.pageControl.currentPageIndicatorTintColor = UIColor.lightGray
-            slideshow.pageControl.pageIndicatorTintColor = UIColor.black
-            slideshow.contentScaleMode = UIViewContentMode.scaleAspectFill
-            
-            // optional way to show activity indicator during image load (skipping the line will show no activity indicator)
-            slideshow.activityIndicator = DefaultActivityIndicator()
-            slideshow.currentPageChanged = { page in
-                print("current page:", page)
-            }
-            
-            // can be used with other sample sources as `afNetworkingSource`, `alamofireSource` or `sdWebImageSource` or `kingfisherSource`
-            slideshow.setImageInputs(localSource)
-            
-            let recognizer = UITapGestureRecognizer(target: self, action: #selector(StaticTabViewController.didTap))
-            slideshow.addGestureRecognizer(recognizer)
-        }
+    
        
     }
     func webViewDidFinishLoad(_ webView: UIWebView) {

@@ -14,7 +14,6 @@ import AVFoundation
 class ProgramItemDetailVC: UIViewController {
     let userDefaults = UserDefaults.standard
     var programItem:ProgramItem!
-    var programCat:String!
     var hideBtn:Bool?
     let center = UNUserNotificationCenter.current()
 
@@ -44,7 +43,7 @@ class ProgramItemDetailVC: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
                 self.descriptionTextView.alpha = 1
         })
-        self.daysLabel.text = dateFormatCustom(programItem.dateStart, programItem.dateEnd)
+        self.daysLabel.text = dateFormatCustom(programItem.dateStart, programItem.dateEnd, lineBreak: true)
         self.dressCodeLabel.text = "Código de vestir: \(programItem.dresscode.capitalized)"
         self.roomLabel.text = "Salón: \(programItem.room)"
         //self.durationLabel.text = "Duración: \(programItem.duration) mins."
@@ -64,35 +63,28 @@ class ProgramItemDetailVC: UIViewController {
         print("Agregado")
         
         
-//        let content = UNMutableNotificationContent()
-//        content.title = "Comienza pronto: \(programCat!)"
-//        content.body = programItem.title
-//        content.sound = UNNotificationSound.default()
-//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,
-//                                                        repeats: false)
+        let content = UNMutableNotificationContent()
+        content.title = "Comienza pronto: \(programItem.category)"
+        content.body = programItem.title
+        content.sound = UNNotificationSound.default()
+       
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssxxxxx"
+        var date = dateFormatter.date(from: "2018-01-01T19:00:00-05:00")
+        if let dd = dateFormatter.date(from: programItem.dateStart){
+             date = dd.addingTimeInterval(15.0 * 60.0 * -1)
+        }
 
         
-        //let date = Date(timeIntervalSinceNow: 0)
+        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date!)
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        var date = dateFormatter.date(from: "22-10-2017 18:45:00")
-//        if let dd = dateFormatter.date(from: programItem.dateString){
-//            print(dd)
-//             date = dd.addingTimeInterval(15.0 * 60.0 * -1)
-//        }
-//
-        
-//        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date!)
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate,
-//                                                    repeats: false)
-//
-//        let identifier = "\(programItem.id)\(programItem.title)"
-//        print("Add Notif:"+identifier)
-//        let request = UNNotificationRequest(identifier: identifier,
-//                                            content: content, trigger: trigger)
-//
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate,
+                                                    repeats: false)
+        let identifier = "\(programItem.id)\(programItem.title)"
+        print("Add Notif:"+identifier)
+        let request = UNNotificationRequest(identifier: identifier,
+                                            content: content, trigger: trigger)
+
 //
         
         print(programItem.catId)
@@ -108,9 +100,7 @@ class ProgramItemDetailVC: UIViewController {
         if var my_schedule_array = userDefaults.object(forKey: "my_schedule_comego") as? [Int]{
             //if !my_schedule_array.contains(programItem.catId){
             var exists = false
-            var tooManyCourses = false
-            var transCounter = 0
-            var preCounter = 0
+           
             
             for item in my_schedule_array{
                 if item == programItem.id{
@@ -122,19 +112,17 @@ class ProgramItemDetailVC: UIViewController {
 //            }
             if !exists {
               
-//                center.add(request, withCompletionHandler: { (error) in
-//                    if let error = error {
-//                        print("Something went wrong\(error)")
-//                    }
-//                })
+                center.add(request, withCompletionHandler: { (error) in
+                    if let error = error {
+                        print("Something went wrong\(error)")
+                    }
+                })
               my_schedule_array.append(programItem.id)
                 userDefaults.set(my_schedule_array, forKey: "my_schedule_comego")
                 
                 self.present(alert2, animated: true, completion: nil)
             }
-            else if tooManyCourses { 
-                self.present(alert4, animated: true, completion: nil)
-            }
+           
             else if exists{
                 self.present(alert3, animated: true, completion: nil)
             }
@@ -186,11 +174,7 @@ class ProgramItemDetailVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func viewDidAppear(_ animated: Bool) {
-        let tracker = GAI.sharedInstance().defaultTracker
-        tracker?.set(kGAIScreenName, value: "Programa Detalle")
-        tracker?.send(GAIDictionaryBuilder.createScreenView().build() as! [AnyHashable: Any])
-    }
+
     
 
     /*
