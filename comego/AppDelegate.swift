@@ -8,8 +8,7 @@
 
 import UIKit
 import UserNotifications
-import GGLAnalytics
-import Google
+import Firebase
     
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,18 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         var configureError: NSError?
-        GGLContext.sharedInstance().configureWithError(&configureError)
-//        assert(configureError == nil, "Error configuring Google services: \(configureError)")
-        
-        // Optional: configure GAI options.
-//        if let gai = GAI.sharedInstance() {
-//            gai.trackUncaughtExceptions = true  // report uncaught exceptions
-//            gai.logger.logLevel = GAILogLevel.verbose  // remove before app release
-//        }
-        
-        //application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil))
-        
-        
+        FirebaseApp.configure()
         // Override point for customization after application launch.
         return true
     }

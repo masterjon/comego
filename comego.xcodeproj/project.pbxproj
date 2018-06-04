@@ -27,6 +27,7 @@
 		FC57009B20A74A6C001063DD /* BoletinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC57009A20A74A6C001063DD /* BoletinesViewController.swift */; };
 		FC57009D20A74EE1001063DD /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC57009C20A74EE1001063DD /* Api.swift */; };
 		FC57386C1F415F5A00FE1304 /* MiAgendaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC57386B1F415F5A00FE1304 /* MiAgendaVC.swift */; };
+		FC78BD7120C3632000AB0AFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC78BD7020C3631E00AB0AFA /* GoogleService-Info.plist */; };
 		FC812BEF1F04C5F2004C406D /* OrganizadoresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC812BEE1F04C5F2004C406D /* OrganizadoresVC.swift */; };
 		FC812BF21F04C85E004C406D /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC812BF11F04C85E004C406D /* ColorPalette.swift */; };
 		FC8890FA20B8B4B300D932B5 /* ProgramSubcategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8890F920B8B4B200D932B5 /* ProgramSubcategory.swift */; };
@@ -38,7 +39,6 @@
 		FCE5C1B520B645D200F7A30D /* NormasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE5C1B420B645D200F7A30D /* NormasViewController.swift */; };
 		FCE5C1B720B6502300F7A30D /* ReglamentosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE5C1B620B6502300F7A30D /* ReglamentosViewController.swift */; };
 		FCE5C1B920B6575800F7A30D /* LeyesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE5C1B820B6575800F7A30D /* LeyesViewController.swift */; };
-		FCF698C91FA5290E00D73123 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCF698C81FA5290D00D73123 /* GoogleService-Info.plist */; };
 		FCFA54231F34FAB8007EC429 /* ProgramCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA54221F34FAB8007EC429 /* ProgramCategory.swift */; };
 		FCFA54251F34FF80007EC429 /* ProgramaCatDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA54241F34FF80007EC429 /* ProgramaCatDetailVC.swift */; };
 		FCFA54271F350303007EC429 /* ProgramItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA54261F350303007EC429 /* ProgramItem.swift */; };
@@ -72,6 +72,7 @@
 		FC57009A20A74A6C001063DD /* BoletinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoletinesViewController.swift; sourceTree = "<group>"; };
 		FC57009C20A74EE1001063DD /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		FC57386B1F415F5A00FE1304 /* MiAgendaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiAgendaVC.swift; sourceTree = "<group>"; };
+		FC78BD7020C3631E00AB0AFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC812BEE1F04C5F2004C406D /* OrganizadoresVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizadoresVC.swift; sourceTree = "<group>"; };
 		FC812BF11F04C85E004C406D /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		FC8890F920B8B4B200D932B5 /* ProgramSubcategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramSubcategory.swift; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 		FCE5C1B420B645D200F7A30D /* NormasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormasViewController.swift; sourceTree = "<group>"; };
 		FCE5C1B620B6502300F7A30D /* ReglamentosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReglamentosViewController.swift; sourceTree = "<group>"; };
 		FCE5C1B820B6575800F7A30D /* LeyesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeyesViewController.swift; sourceTree = "<group>"; };
-		FCF698C81FA5290D00D73123 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCF698CA1FA52E1000D73123 /* flasog-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "flasog-Bridging-Header.h"; sourceTree = "<group>"; };
 		FCFA54221F34FAB8007EC429 /* ProgramCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramCategory.swift; sourceTree = "<group>"; };
 		FCFA54241F34FF80007EC429 /* ProgramaCatDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramaCatDetailVC.swift; sourceTree = "<group>"; };
@@ -125,7 +125,6 @@
 		FC126FFB1F005A29008624C3 = {
 			isa = PBXGroup;
 			children = (
-				FCF698C81FA5290D00D73123 /* GoogleService-Info.plist */,
 				FC1270061F005A2A008624C3 /* comego */,
 				FC1270051F005A2A008624C3 /* Products */,
 				C249DBE8924AF3ED16A0F81D /* Pods */,
@@ -156,6 +155,7 @@
 				FC1270131F005A2A008624C3 /* Info.plist */,
 				FC812BEE1F04C5F2004C406D /* OrganizadoresVC.swift */,
 				FC528DDB1F1C1060005931F0 /* StaticTabViewController.swift */,
+				FC78BD7020C3631E00AB0AFA /* GoogleService-Info.plist */,
 				FC456AFC1F33792C00CDDB44 /* PatrocinadoresVC.swift */,
 				FC456B001F337F4300CDDB44 /* PatrocinadoresDetailVC.swift */,
 				FCD579F21F34EED4004A311C /* ProgramaVC.swift */,
@@ -271,9 +271,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCF698C91FA5290E00D73123 /* GoogleService-Info.plist in Resources */,
 				FC1270121F005A2A008624C3 /* LaunchScreen.storyboard in Resources */,
 				FC12700F1F005A2A008624C3 /* Assets.xcassets in Resources */,
+				FC78BD7120C3632000AB0AFA /* GoogleService-Info.plist in Resources */,
 				FC12700D1F005A2A008624C3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,19 +290,19 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-comego/Pods-comego-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

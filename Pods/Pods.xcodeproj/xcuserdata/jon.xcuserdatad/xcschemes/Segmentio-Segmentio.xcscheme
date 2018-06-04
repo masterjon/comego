@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "42AAB1A67C5E20BC04FC6EA31D56CDFD"
+               BlueprintIdentifier = "1A7EF0A5600E4878198D567EC309BC38"
                BuildableName = "Segmentio.bundle"
                BlueprintName = "Segmentio-Segmentio"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "42AAB1A67C5E20BC04FC6EA31D56CDFD"
+            BlueprintIdentifier = "1A7EF0A5600E4878198D567EC309BC38"
             BuildableName = "Segmentio.bundle"
             BlueprintName = "Segmentio-Segmentio"
             ReferencedContainer = "container:Pods.xcodeproj">

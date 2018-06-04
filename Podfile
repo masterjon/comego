@@ -6,8 +6,7 @@ target 'comego' do
   use_frameworks!
   pod 'Alamofire'
   pod 'SwiftyJSON'
-  pod 'Google/Analytics'
+  pod 'Firebase/Core'
   pod 'SideMenu'
   pod 'Segmentio'
-  pod 'ImageSlideshow', '~> 1.4'
 end

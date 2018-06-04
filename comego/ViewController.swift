@@ -190,11 +190,7 @@ class ViewController: UIViewController {
         })
         
     }
-    override func viewDidAppear(_ animated: Bool) {
-        let tracker = GAI.sharedInstance().defaultTracker
-        tracker?.set(kGAIScreenName, value: "Inicio")
-        tracker?.send(GAIDictionaryBuilder.createScreenView().build() as! [AnyHashable: Any])
-    }
+
     
     @IBAction func comegoTV(_ sender: UIButton) {
         let url = URL(string: "http://tv.comego.org.mx/")!

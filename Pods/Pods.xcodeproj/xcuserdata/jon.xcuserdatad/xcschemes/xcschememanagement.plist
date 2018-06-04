@@ -14,16 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ImageSlideshow-ImageSlideshow.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>ImageSlideshow.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-comego.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -45,6 +35,11 @@
 			<false/>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>nanopb.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

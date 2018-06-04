@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import ImageSlideshow
 class StaticTabViewController: UIViewController,UIWebViewDelegate{
 
-    @IBOutlet var slideshow: ImageSlideshow!
     
     @IBOutlet var textView1: UITextView!
     @IBOutlet var textView2: UITextView!
@@ -49,9 +47,9 @@ class StaticTabViewController: UIViewController,UIWebViewDelegate{
     }
     
     @objc func didTap() {
-        let fullScreenController = slideshow.presentFullScreenController(from: self)
-        // set the activity indicator for full screen controller (skipping the line will show no activity indicator)
-        fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
+//        let fullScreenController = slideshow.presentFullScreenController(from: self)
+//        // set the activity indicator for full screen controller (skipping the line will show no activity indicator)
+//        fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
     }
     
     override func didReceiveMemoryWarning() {

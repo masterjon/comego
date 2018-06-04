@@ -186,11 +186,7 @@ class OrganizadoresVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    override func viewDidAppear(_ animated: Bool) {
-        let tracker = GAI.sharedInstance().defaultTracker
-        tracker?.set(kGAIScreenName, value: "Organizadores")
-        tracker?.send(GAIDictionaryBuilder.createScreenView().build() as! [AnyHashable: Any])
-    }
+
 
 }
 extension OrganizadoresVC : UIScrollViewDelegate{
