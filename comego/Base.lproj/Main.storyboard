@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MVq-bF-xyn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MVq-bF-xyn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -85,9 +85,10 @@
                                     <constraint firstItem="qmB-ei-nmv" firstAttribute="centerX" secondItem="Ffd-sf-HhN" secondAttribute="centerX" id="ovx-Pj-zHW"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b27-u9-XzF" userLabel="ICC">
-                                <rect key="frame" x="16" y="534" width="343" height="61.5"/>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JbE-fO-PwQ" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                <rect key="frame" x="16" y="534" width="343" height="61"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dPp-kK-VGc">
                                 <rect key="frame" x="16" y="206.5" width="343" height="250"/>
                                 <subviews>
@@ -218,6 +219,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="JbE-fO-PwQ" secondAttribute="trailing" constant="16" id="1bk-nO-Ypv"/>
                             <constraint firstItem="kyw-3U-pq3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="5cu-Ty-Aep"/>
                             <constraint firstItem="ajL-nt-rE1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="67G-RK-Iuc"/>
                             <constraint firstAttribute="trailing" secondItem="kyw-3U-pq3" secondAttribute="trailing" constant="16" id="8pP-6D-ooN"/>
@@ -233,17 +235,16 @@
                             <constraint firstAttribute="trailing" secondItem="dPp-kK-VGc" secondAttribute="trailing" constant="16" id="Q3a-TA-H1o"/>
                             <constraint firstItem="sjR-or-Z3M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="T8k-TD-7z8"/>
                             <constraint firstItem="LuT-Bg-wvp" firstAttribute="centerY" secondItem="kyw-3U-pq3" secondAttribute="centerY" id="UkE-CB-1Id"/>
-                            <constraint firstItem="b27-u9-XzF" firstAttribute="leading" secondItem="sjR-or-Z3M" secondAttribute="trailing" constant="-343" id="WgQ-GK-a16"/>
                             <constraint firstItem="LuT-Bg-wvp" firstAttribute="centerX" secondItem="kyw-3U-pq3" secondAttribute="centerX" id="XNr-u2-fMm"/>
                             <constraint firstAttribute="trailing" secondItem="ajL-nt-rE1" secondAttribute="trailing" id="YpD-MN-ycW"/>
-                            <constraint firstItem="b27-u9-XzF" firstAttribute="top" secondItem="sjR-or-Z3M" secondAttribute="bottom" constant="-61" id="aCI-4Q-inC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JbE-fO-PwQ" secondAttribute="bottom" constant="8" id="ZRM-fh-zoa"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ajL-nt-rE1" secondAttribute="bottom" id="dWq-3u-HhA"/>
                             <constraint firstItem="dPp-kK-VGc" firstAttribute="top" secondItem="Ffd-sf-HhN" secondAttribute="bottom" constant="8" id="g6m-ZT-erE"/>
                             <constraint firstItem="kyw-3U-pq3" firstAttribute="top" secondItem="dPp-kK-VGc" secondAttribute="bottom" constant="8" id="iVA-3H-ceK"/>
                             <constraint firstItem="LuT-Bg-wvp" firstAttribute="height" secondItem="kyw-3U-pq3" secondAttribute="height" id="kLI-dk-nNL"/>
                             <constraint firstItem="ajL-nt-rE1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="kbl-el-nEu"/>
-                            <constraint firstItem="b27-u9-XzF" firstAttribute="centerX" secondItem="sjR-or-Z3M" secondAttribute="centerX" id="uNT-6e-h9n"/>
-                            <constraint firstItem="b27-u9-XzF" firstAttribute="centerY" secondItem="sjR-or-Z3M" secondAttribute="centerY" id="zDP-Mx-tC6"/>
+                            <constraint firstItem="JbE-fO-PwQ" firstAttribute="top" secondItem="kyw-3U-pq3" secondAttribute="bottom" constant="8" id="nfw-zr-hLb"/>
+                            <constraint firstItem="JbE-fO-PwQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="ohp-fO-dFV"/>
                             <constraint firstItem="sjR-or-Z3M" firstAttribute="width" secondItem="sjR-or-Z3M" secondAttribute="height" multiplier="28:5" id="zeJ-U4-XCl"/>
                         </constraints>
                     </view>
@@ -257,6 +258,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="counterLabel" destination="qmB-ei-nmv" id="XKa-Ut-dPs"/>
+                        <outlet property="slideshow" destination="JbE-fO-PwQ" id="LKL-T7-eQE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -3228,6 +3230,6 @@ Cg
         <segue reference="XjT-4Z-en0"/>
         <segue reference="5Vl-iL-pvQ"/>
         <segue reference="Wf3-CZ-riI"/>
-        <segue reference="WLR-aY-bER"/>
+        <segue reference="XHE-vv-rFZ"/>
     </inferredMetricsTieBreakers>
 </document>

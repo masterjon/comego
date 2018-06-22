@@ -11,6 +11,8 @@ import UIKit
 class PodcastPartsViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
+    
+    
     var parts = [PodcastPart]()
     override func viewDidLoad() {
         super.viewDidLoad()

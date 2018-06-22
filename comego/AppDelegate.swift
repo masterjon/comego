@@ -9,19 +9,21 @@
 import UIKit
 import UserNotifications
 import Firebase
+import FirebaseInstanceID
+import FirebaseMessaging
     
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
-
+    
     let notificationDelegate = UYLNotificationDelegate()
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let center = UNUserNotificationCenter.current()
         let options: UNAuthorizationOptions = [.alert, .sound, .badge];
         center.delegate = notificationDelegate
-
+        
         center.requestAuthorization(options: options) {
             (granted, error) in
             if !granted {
@@ -29,7 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        
+        
         var configureError: NSError?
+        Messaging.messaging().remoteMessageDelegate = self
+        application.registerForRemoteNotifications()
         FirebaseApp.configure()
         // Override point for customization after application launch.
         return true
