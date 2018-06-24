@@ -85,7 +85,8 @@ class ViewController: UIViewController {
     @objc func didTap() {
         print(self.remoteUrls)
         print(slideshow.scrollViewPage)
-        guard let url = URL(string: self.remoteUrls[slideshow.scrollViewPage]) else{return}
+        print(slideshow.currentPage)
+        guard let url = URL(string: self.remoteUrls[slideshow.currentPage]) else{return}
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
