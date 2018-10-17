@@ -61,6 +61,15 @@ class ProgramaCatDetailVC: UIViewController, UITableViewDataSource,UITableViewDe
                         actividad.academicProgramUrl = item["academic_program_url"].string ?? ""
                         actividad.inscriptionUrl = item["inscription_url"].string ?? ""
                         actividad.category = item["category"].string ?? ""
+                        for presentacionItem in item["presentaciones"].arrayValue{
+                            let presentacion = Presentacion()
+                            presentacion.id = presentacionItem["id"].int!
+                            presentacion.title = presentacionItem["title"].string ?? ""
+                            presentacion.profesor = presentacionItem["doctor"].string ?? ""
+                            presentacion.pdf = presentacionItem["pdf"].string ?? ""
+                            presentacion.horario = presentacionItem["horario"].string ?? ""
+                            actividad.presentaciones.append(presentacion)
+                        }
                         subCategory.activities.append(actividad)
                     }
                     self.subCategories.append(subCategory)

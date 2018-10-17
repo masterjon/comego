@@ -46,7 +46,7 @@ class ViewController: UIViewController {
 //        SideMenuManager.menuLeftNavigationController = menuLeftNavigationController
 
         
-        let dateString = "26-06-2018 00:00:00"
+        let dateString = "25-06-2019 07:00:00"
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")

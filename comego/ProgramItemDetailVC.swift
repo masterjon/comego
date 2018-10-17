@@ -11,7 +11,7 @@ import UserNotifications
 import AVFoundation
 
 
-class ProgramItemDetailVC: UIViewController {
+class ProgramItemDetailVC: UIViewController, UITableViewDataSource {
     let userDefaults = UserDefaults.standard
     var programItem:ProgramItem!
     var hideBtn:Bool?
@@ -29,6 +29,7 @@ class ProgramItemDetailVC: UIViewController {
     @IBOutlet var academicProgramBtn: UIButton!
     
     @IBOutlet var InscribeteBtn: UIButton!
+    @IBOutlet var tableView: UITableView!
     
     
     override func viewDidLoad() {
@@ -173,6 +174,64 @@ class ProgramItemDetailVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(programItem.presentaciones.count)
+        return programItem.presentaciones.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let presentacion = programItem.presentaciones[indexPath.row]
+        print(presentacion.title)
+        print(presentacion.profesor)
+        if let title = cell.viewWithTag(2) as? UILabel{
+            title.text = presentacion.title
+        }
+        if let prof = cell.viewWithTag(1) as? UILabel{
+            prof.text = presentacion.profesor
+        }
+        if let time = cell.viewWithTag(4) as? UILabel{
+            time.text = presentacion.horario
+        }
+        if let pdfView = cell.viewWithTag(3){
+            if presentacion.pdf.isEmpty{
+                pdfView.isHidden = true
+            }
+            else{
+                pdfView.isHidden = false
+            }
+            
+        }
+        return cell
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? PresentacionViewController{
+            if let indexPath = tableView.indexPathForSelectedRow{
+                let item = programItem.presentaciones[indexPath.row]
+                vc.presentacion = item
+            }
+        }
+        
+        
+        
+    }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if let sender = sender as? UITableViewCell{
+            if let indexPath = self.tableView.indexPath(for: sender){
+                let presentacion = programItem.presentaciones[indexPath.row]
+                if !presentacion.pdf.isEmpty{
+                    return true
+                }
+            }
+        }
+        else if identifier == "salonesSegue"{
+            return true
+        }
+        
+        return false
+        
     }
 
     

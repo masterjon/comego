@@ -13,6 +13,8 @@
 		FC12700D1F005A2A008624C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC12700B1F005A2A008624C3 /* Main.storyboard */; };
 		FC12700F1F005A2A008624C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC12700E1F005A2A008624C3 /* Assets.xcassets */; };
 		FC1270121F005A2A008624C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC1270101F005A2A008624C3 /* LaunchScreen.storyboard */; };
+		FC286E4021769A68005F0B41 /* Presentacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC286E3F21769A68005F0B41 /* Presentacion.swift */; };
+		FC286E422176A570005F0B41 /* PresentacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC286E412176A570005F0B41 /* PresentacionViewController.swift */; };
 		FC38B1041F3E68FB008F1B11 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC38B1031F3E68FA008F1B11 /* MenuTableViewController.swift */; };
 		FC41EBBB1F6F618D00FF9CF9 /* MyScheduleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41EBBA1F6F618D00FF9CF9 /* MyScheduleItem.swift */; };
 		FC456AFD1F33792C00CDDB44 /* PatrocinadoresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC456AFC1F33792C00CDDB44 /* PatrocinadoresVC.swift */; };
@@ -58,6 +60,8 @@
 		FC12700E1F005A2A008624C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC1270111F005A2A008624C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC1270131F005A2A008624C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC286E3F21769A68005F0B41 /* Presentacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentacion.swift; sourceTree = "<group>"; };
+		FC286E412176A570005F0B41 /* PresentacionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentacionViewController.swift; sourceTree = "<group>"; };
 		FC38B1031F3E68FA008F1B11 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		FC41EBBA1F6F618D00FF9CF9 /* MyScheduleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleItem.swift; sourceTree = "<group>"; };
 		FC456AFC1F33792C00CDDB44 /* PatrocinadoresVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatrocinadoresVC.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 				FC57386B1F415F5A00FE1304 /* MiAgendaVC.swift */,
 				FCF698CA1FA52E1000D73123 /* flasog-Bridging-Header.h */,
 				FC467F8C20BF9A4900E529D2 /* MenuCollectionViewController.swift */,
+				FC286E412176A570005F0B41 /* PresentacionViewController.swift */,
 			);
 			path = comego;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				FC41EBBA1F6F618D00FF9CF9 /* MyScheduleItem.swift */,
 				FCE5C1AE20B5CC4700F7A30D /* PodcastPart.swift */,
 				FCE5C1B020B5D5D000F7A30D /* Podcast.swift */,
+				FC286E3F21769A68005F0B41 /* Presentacion.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -355,6 +361,8 @@
 				FC812BEF1F04C5F2004C406D /* OrganizadoresVC.swift in Sources */,
 				FC57009D20A74EE1001063DD /* Api.swift in Sources */,
 				FCE5C1AF20B5CC4700F7A30D /* PodcastPart.swift in Sources */,
+				FC286E422176A570005F0B41 /* PresentacionViewController.swift in Sources */,
+				FC286E4021769A68005F0B41 /* Presentacion.swift in Sources */,
 				FC12700A1F005A2A008624C3 /* ViewController.swift in Sources */,
 				FC38B1041F3E68FB008F1B11 /* MenuTableViewController.swift in Sources */,
 				FC456B011F337F4300CDDB44 /* PatrocinadoresDetailVC.swift in Sources */,
